@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class FoodDiary extends AppCompatActivity {
+public class SportsDiary extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_diary);
+        setContentView(R.layout.activity_sports_diary);
     }
 }

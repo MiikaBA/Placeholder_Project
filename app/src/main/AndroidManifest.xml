@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Placeholder_Project">
         <activity
+            android:name=".BreathingExcercise"
+            android:exported="false" />
+        <activity
+            android:name=".FoodDiary"
+            android:exported="false" />
+        <activity
+            android:name=".SportsDiary"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
