@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,5 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
         Intent nextActivity = new Intent(MainActivity.this, SportsDiary.class);
         startActivity(nextActivity);
+    }
+
+    public void etene(View view) {
+        Intent intent = new Intent(this, SportsDiary.class);
+        startActivity(intent);
     }
 }
