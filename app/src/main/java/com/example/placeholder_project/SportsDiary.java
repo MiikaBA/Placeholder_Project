@@ -14,8 +14,10 @@ public class SportsDiary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports_diary);
 
+        //TODO korvaa preferensseistä haetulla tiedolla.
         int TS = 54;
         int CB = 2346;
+
         SC = new SportsCounter(TS, CB);
         updateUI();
     }
