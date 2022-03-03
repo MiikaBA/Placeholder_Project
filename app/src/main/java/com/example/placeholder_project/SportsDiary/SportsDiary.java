@@ -22,7 +22,6 @@ public class SportsDiary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports_diary);
 
-        //TODO korvaa preferensseistä haetulla tiedolla.
         SharedPreferences counterVals = getSharedPreferences("CounterVals" , Activity.MODE_PRIVATE);
         int TS = counterVals.getInt("TimeVal", 1);
         int CB = counterVals.getInt("CalorieVal", 2);
@@ -30,6 +29,7 @@ public class SportsDiary extends AppCompatActivity {
         SC = new SportsCounter(TS, CB);
         updateUI();
     }
+
     public void updateUI() {
         TextView calTV = findViewById(R.id.calTextView);
         calTV.setText(Integer.toString(SC.getCaloriesBurnt()) + " kcal.");
@@ -47,6 +47,7 @@ public class SportsDiary extends AppCompatActivity {
             startActivity(breath);
         }else if(v == findViewById(R.id.inspectionButton)){
             Intent inspection = new Intent(SportsDiary.this, ActivityInspection.class);
+            startActivity(inspection);
         }
     }
 }

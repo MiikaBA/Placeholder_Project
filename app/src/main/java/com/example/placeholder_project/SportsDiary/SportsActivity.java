@@ -29,4 +29,17 @@ public class SportsActivity {
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public String toString(){
+        if(actType == 1){
+            return "Juoksu" + " Päivämäärä";
+        }else if(actType == 2){
+            return "Lihaskunto" + " Päivämäärä";
+        }else if(actType == 3){
+            return "Pyöräily" + " Päivämäärä";
+        }else{
+            return "Tuntematon aktiviteetti";
+        }
+    }
 }
