@@ -2,7 +2,9 @@ package com.example.placeholder_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class SportsDiary extends AppCompatActivity {
@@ -27,5 +29,15 @@ public class SportsDiary extends AppCompatActivity {
 
         TextView timeTV = findViewById(R.id.timeTextView);
         timeTV.setText(Integer.toString(SC.getTimeSpent()) + " min.");
+    }
+
+    public void goNext(View v){ //haha lol xd
+        if(v == findViewById(R.id.foodButton)){
+            Intent food = new Intent(SportsDiary.this, FoodDiary.class);
+            startActivity(food);
+        }else if(v == findViewById(R.id.breathingButton)){
+            Intent breath = new Intent(SportsDiary.this, BreathingExcercise.class);
+            startActivity(breath);
+        }
     }
 }
