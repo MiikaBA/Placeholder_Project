@@ -99,24 +99,24 @@
         app:layout_constraintGuide_percent="0.4" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/additionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:text="Add Activity"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inspectionButton"
+        app:layout_constraintEnd_toStartOf="@+id/inspectionButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/inspectionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Button"
+        android:text="Inspect Activities"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintStart_toEndOf="@+id/additionButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

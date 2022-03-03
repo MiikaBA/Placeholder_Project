@@ -17,7 +17,7 @@ public class BreathingExcercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathing_excercise);
-        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.additionButton);
         textView = (TextView) findViewById(R.id.textView8);
         button.setOnClickListener(new View.OnClickListener() {
 

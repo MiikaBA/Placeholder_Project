@@ -2,7 +2,9 @@ package com.example.placeholder_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -17,8 +19,9 @@ public class SportsDiary extends AppCompatActivity {
         setContentView(R.layout.activity_sports_diary);
 
         //TODO korvaa preferensseistä haetulla tiedolla.
-        int TS = 54;
-        int CB = 2346;
+        SharedPreferences counterVals = getSharedPreferences("CounterVals" , Activity.MODE_PRIVATE);
+        int TS = counterVals.getInt("TimeVal", 1);
+        int CB = counterVals.getInt("CalorieVal", 2);
 
         SC = new SportsCounter(TS, CB);
         updateUI();
