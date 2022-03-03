@@ -31,7 +31,7 @@ public class SportsDiary extends AppCompatActivity {
         timeTV.setText(Integer.toString(SC.getTimeSpent()) + " min.");
     }
 
-    public void goNext(View v){ //tämä lähettää seuraavaan
+    public void goNext(View v){ //haha lol xd
         if(v == findViewById(R.id.foodButton)){
             Intent food = new Intent(SportsDiary.this, FoodDiary.class);
             startActivity(food);
