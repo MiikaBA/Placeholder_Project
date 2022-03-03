@@ -1,4 +1,4 @@
-package com.example.placeholder_project;
+package com.example.placeholder_project.SportsDiary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.placeholder_project.BreathingExcercise;
+import com.example.placeholder_project.FoodDiary;
+import com.example.placeholder_project.R;
 
 public class SportsDiary extends AppCompatActivity {
 

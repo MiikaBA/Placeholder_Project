@@ -1,4 +1,4 @@
-package com.example.placeholder_project;
+package com.example.placeholder_project.SportsDiary;
 
 import java.util.ArrayList;
 import java.util.List;

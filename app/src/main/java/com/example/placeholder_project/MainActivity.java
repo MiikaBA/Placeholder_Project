@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.placeholder_project.SportsDiary.SportsDiary;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

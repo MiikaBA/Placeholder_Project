@@ -16,7 +16,7 @@
             android:name=".FoodDiary"
             android:exported="false" />
         <activity
-            android:name=".SportsDiary"
+            android:name=".SportsDiary.SportsDiary"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
