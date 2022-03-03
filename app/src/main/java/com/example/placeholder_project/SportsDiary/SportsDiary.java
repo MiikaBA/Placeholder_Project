@@ -49,5 +49,6 @@ public class SportsDiary extends AppCompatActivity {
             Intent inspection = new Intent(SportsDiary.this, ActivityInspection.class);
             startActivity(inspection);
         }
+        //TODO implement additionButton and required activity
     }
 }
