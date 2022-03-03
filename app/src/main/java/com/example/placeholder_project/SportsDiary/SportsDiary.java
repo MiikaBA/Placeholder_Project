@@ -45,6 +45,8 @@ public class SportsDiary extends AppCompatActivity {
         }else if(v == findViewById(R.id.breathingButton)){
             Intent breath = new Intent(SportsDiary.this, BreathingExcercise.class);
             startActivity(breath);
+        }else if(v == findViewById(R.id.inspectionButton)){
+            Intent inspection = new Intent(SportsDiary.this, ActivityInspection.class);
         }
     }
 }
