@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class BreathingExcercise extends AppCompatActivity {
 
-    private static final long START_TIME_IN_MILLIS = 6000;
+    private static final long START_TIME_IN_MILLIS = 180000;
 
      private Button buttonstart_pause;
      private Button button_reset;
