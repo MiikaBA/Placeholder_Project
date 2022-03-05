@@ -21,7 +21,11 @@ public class ActivitySingleton {
         return activities;
     }
 
-    public SportsActivity getPresident(int pos){
+    public SportsActivity getActivity(int pos){
         return activities.get(pos);
+    }
+
+    public void addActivity(int type, int time, int cals, String desc){
+        activities.add(new SportsActivity(type, time, cals, desc));
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.placeholder_project.R;
 
@@ -18,6 +19,18 @@ public class ActivityDetails extends AppCompatActivity {
         int i = b.getInt(ActivityInspection.EXTRA, 0);
 
         Log.i("DBG", Integer.toString(i));
-        //TODO implement ActivityDetails
+        SportsActivity actToShow = ActivitySingleton.getInstance().getActivity(i);
+
+        TextView toSet = findViewById(R.id.actTypeLV);
+        toSet.setText(actToShow.getActType());
+
+        toSet = findViewById(R.id.timeLV);
+        toSet.setText(Integer.toString(actToShow.getTimeSpent()) + " min.");
+
+        toSet = findViewById(R.id.calLV);
+        toSet.setText(Integer.toString(actToShow.getCalsBurnt()) + " kcal.");
+
+        toSet = findViewById(R.id.descLV);
+        toSet.setText(actToShow.getDescription());
     }
 }

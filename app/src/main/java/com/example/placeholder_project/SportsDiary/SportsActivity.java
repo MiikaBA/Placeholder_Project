@@ -18,8 +18,16 @@ public class SportsActivity {
         return timeSpent;
     }
 
-    public int getActType() {
-        return actType;
+    public String getActType() {
+        if(actType == 1){
+            return "Juoksu";
+        }else if(actType == 2){
+            return "Lihaskunto";
+        }else if(actType == 3){
+            return "Pyöräily";
+        }else{
+            return "Tuntematon suoritus";
+        }
     }
 
     public int getCalsBurnt() {
@@ -33,11 +41,11 @@ public class SportsActivity {
     @Override
     public String toString(){
         if(actType == 1){
-            return "Juoksu" + " Päivämäärä";
+            return "Juoksu";
         }else if(actType == 2){
-            return "Lihaskunto" + " Päivämäärä";
+            return "Lihaskunto";
         }else if(actType == 3){
-            return "Pyöräily" + " Päivämäärä";
+            return "Pyöräily";
         }else{
             return "Tuntematon aktiviteetti";
         }
