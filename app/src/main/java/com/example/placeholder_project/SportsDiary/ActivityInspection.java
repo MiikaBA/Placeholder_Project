@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.placeholder_project.R;
+import com.example.placeholder_project.SportsDiary.Classes.SportsActivity;
 
 public class ActivityInspection extends AppCompatActivity {
     public static final String EXTRA = "com.example.placeholder_project.ListPos";

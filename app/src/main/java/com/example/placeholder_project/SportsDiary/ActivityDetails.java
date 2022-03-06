@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.placeholder_project.R;
+import com.example.placeholder_project.SportsDiary.Classes.SportsActivity;
 
 public class ActivityDetails extends AppCompatActivity {
 

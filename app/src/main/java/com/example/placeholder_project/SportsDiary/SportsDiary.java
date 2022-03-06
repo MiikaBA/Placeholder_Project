@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.placeholder_project.BreathingExcercise;
 import com.example.placeholder_project.FoodDiary;
 import com.example.placeholder_project.R;
+import com.example.placeholder_project.SportsDiary.Classes.SportsCounter;
 
 public class SportsDiary extends AppCompatActivity {
 
@@ -48,7 +49,9 @@ public class SportsDiary extends AppCompatActivity {
         }else if(v == findViewById(R.id.inspectionButton)){
             Intent inspection = new Intent(SportsDiary.this, ActivityInspection.class);
             startActivity(inspection);
+        }else if(v == findViewById(R.id.additionButton)){
+            Intent addition = new Intent(SportsDiary.this, ActivityAddition.class);
+            startActivity(addition);
         }
-        //TODO implement additionButton and required activity
     }
 }

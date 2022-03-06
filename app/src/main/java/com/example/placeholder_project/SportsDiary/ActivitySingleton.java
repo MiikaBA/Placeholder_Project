@@ -1,5 +1,7 @@
 package com.example.placeholder_project.SportsDiary;
 
+import com.example.placeholder_project.SportsDiary.Classes.SportsActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 

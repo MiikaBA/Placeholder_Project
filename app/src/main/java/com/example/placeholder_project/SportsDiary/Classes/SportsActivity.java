@@ -1,4 +1,4 @@
-package com.example.placeholder_project.SportsDiary;
+package com.example.placeholder_project.SportsDiary.Classes;
 
 public class SportsActivity {
 
