@@ -23,24 +23,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    protected void onStart() {
-        super.onStart();
-        SharedPreferences sharedPref = getSharedPreferences("Prefs", MODE_PRIVATE);
-
-        if(!sharedPref.getString("name", "").matches("")) {
-            Intent intent = new Intent(this, SportsDiary.class);
-            startActivity(intent);
-        }
-    }
-
     protected void onResume() {
         super.onResume();
-        SharedPreferences sharedPref = getSharedPreferences("Prefs", MODE_PRIVATE);
-
-        if (!sharedPref.getString("name", "").matches("")) {
-            Intent intent = new Intent(this, SportsDiary.class);
-            startActivity(intent);
-        }
+        onBackPressed();
     }
     public void Submit(View view) {
         SharedPreferences sharedPref = getSharedPreferences("Prefs", MODE_PRIVATE);
