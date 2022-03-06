@@ -17,6 +17,7 @@ public class FoodCounter {
     public int getAllTimeValue(){
         return all;
     }
+
     public int getTodayValue(){
         return today;
     }

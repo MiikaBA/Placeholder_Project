@@ -9,7 +9,6 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -46,7 +45,7 @@ public class FoodDiary extends AppCompatActivity {
         }
     }
 
-    // Takes the input editTextNumber component, adds it to counter and updates Ui.
+    // Takes the input from editTextNumber component, adds it to counter and updates Ui.
     public void addCalories(View v){
         EditText editTextNumber2 = findViewById(R.id.editTextNumber2);
         // If statement for checking that input is not empty
@@ -70,11 +69,15 @@ public class FoodDiary extends AppCompatActivity {
     // Method for moving between activities when button is clicked
     public void goNext(View v){
         if(v == findViewById(R.id.sportsButton)){
+            // Sports Activity
             Intent food = new Intent(FoodDiary.this, SportsDiary.class);
-            startActivity(food);
+            food.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivityIfNeeded(food, 0   );
         }else if(v == findViewById(R.id.breathingButton)){
+            // Breathing Activity
             Intent breath = new Intent(FoodDiary.this, BreathingExcercise.class);
-            startActivity(breath);
+            breath.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivityIfNeeded(breath, 0);
         }
     }
 
