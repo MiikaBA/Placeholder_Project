@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class SportsDiary extends AppCompatActivity {
 
         SC = new SportsCounter(TS, CB);
         updateUI();
+        Log.i("DBG", "LUOTU LUOTU");
     }
 
     public void updateUI() {
