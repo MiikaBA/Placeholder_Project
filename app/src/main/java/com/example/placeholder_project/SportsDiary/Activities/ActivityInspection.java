@@ -1,4 +1,4 @@
-package com.example.placeholder_project.SportsDiary;
+package com.example.placeholder_project.SportsDiary.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.placeholder_project.R;
+import com.example.placeholder_project.SportsDiary.Classes.ActivitySingleton;
 import com.example.placeholder_project.SportsDiary.Classes.SportsActivity;
 
 public class ActivityInspection extends AppCompatActivity {

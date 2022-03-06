@@ -1,4 +1,4 @@
-package com.example.placeholder_project.SportsDiary;
+package com.example.placeholder_project.SportsDiary.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,8 +24,8 @@ public class SportsDiary extends AppCompatActivity {
         setContentView(R.layout.activity_sports_diary);
 
         SharedPreferences counterVals = getSharedPreferences("CounterVals" , Activity.MODE_PRIVATE);
-        int TS = counterVals.getInt("TimeVal", 1);
-        int CB = counterVals.getInt("CalorieVal", 2);
+        int TS = counterVals.getInt("TimeVal", 0);
+        int CB = counterVals.getInt("CalorieVal", 0);
 
         SC = new SportsCounter(TS, CB);
         updateUI();

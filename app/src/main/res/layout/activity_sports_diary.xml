@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SportsDiary.SportsDiary">
+    tools:context=".SportsDiary.Activities.SportsDiary">
 
     <ImageButton
         android:id="@+id/breathingButton"
@@ -102,6 +102,7 @@
         android:id="@+id/additionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:onClick="goNext"
         android:text="Add Activity"
         app:layout_constraintBaseline_toBaselineOf="@+id/inspectionButton"
         app:layout_constraintEnd_toStartOf="@+id/inspectionButton"

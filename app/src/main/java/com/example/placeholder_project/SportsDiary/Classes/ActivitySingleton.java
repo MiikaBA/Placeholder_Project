@@ -1,6 +1,4 @@
-package com.example.placeholder_project.SportsDiary;
-
-import com.example.placeholder_project.SportsDiary.Classes.SportsActivity;
+package com.example.placeholder_project.SportsDiary.Classes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +11,7 @@ public class ActivitySingleton {
         return ourInstance;
     }
 
-    private ActivitySingleton() { //Initiates President list.
+    private ActivitySingleton() {
         activities = new ArrayList<>();
         activities.add(new SportsActivity(1, 34, 456, "ripsakka lenkki XDDDDD"));
 
@@ -27,7 +25,16 @@ public class ActivitySingleton {
         return activities.get(pos);
     }
 
-    public void addActivity(int type, int time, int cals, String desc){
-        activities.add(new SportsActivity(type, time, cals, desc));
+    public void addActivity(String type, int time, int cals, String desc){
+        int finalType;
+        if(type.equals("juoksu") || type.equals("Juoksu")){
+            finalType = 1;
+        }else if(type.equals("lihaskunto") || type.equals("Lihaskunto")){
+            finalType = 2;
+        }else if(type.equals("pyöräily") || type.equals("Pyöräily")){
+            finalType = 3;
+        }else{finalType = 4;}
+
+        activities.add(new SportsActivity(finalType, time, cals, desc));
     }
 }

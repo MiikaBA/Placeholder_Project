@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Placeholder_Project">
         <activity
-            android:name=".SportsDiary.ActivityAddition"
+            android:name=".SportsDiary.Activities.ActivityAddition"
             android:exported="false" />
         <activity
-            android:name=".SportsDiary.ActivityDetails"
+            android:name=".SportsDiary.Activities.ActivityDetails"
             android:exported="false" />
         <activity
-            android:name=".SportsDiary.ActivityInspection"
+            android:name=".SportsDiary.Activities.ActivityInspection"
             android:exported="false" />
         <activity
             android:name=".BreathingExcercise"
@@ -25,7 +25,7 @@
             android:name=".FoodDiary"
             android:exported="false" />
         <activity
-            android:name=".SportsDiary.SportsDiary"
+            android:name=".SportsDiary.Activities.SportsDiary"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

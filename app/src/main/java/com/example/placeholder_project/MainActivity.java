@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.placeholder_project.SportsDiary.SportsDiary;
+import com.example.placeholder_project.SportsDiary.Activities.SportsDiary;
 
 public class MainActivity extends AppCompatActivity {
 
