@@ -1,6 +1,8 @@
 package com.example.placeholder_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -96,5 +98,15 @@ public class BreathingExcercise extends AppCompatActivity {
 
         String timeLeft = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         textViewCountdown.setText(timeLeft);
+    }
+
+    public void goNext(View v){
+        if(v == findViewById(R.id.foodsButton)){
+            Intent food = new Intent(BreathingExcercise.this, FoodDiary.class);
+            startActivity(food);
+        }else if(v == findViewById(R.id.sportButton)){
+            Intent sport = new Intent(BreathingExcercise.this, SportsDiary.class);
+            startActivity(sport);
+        }
     }
 }
