@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.placeholder_project.SportsDiary.Activities.SportsDiary;
 import java.util.Locale;
 
 public class BreathingExcercise extends AppCompatActivity {

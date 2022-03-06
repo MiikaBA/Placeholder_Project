@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.placeholder_project.SportsDiary.Activities.SportsDiary;
 import java.util.Date;
 import java.util.Locale;
 
