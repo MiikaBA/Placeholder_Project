@@ -1,9 +1,12 @@
 package com.example.placeholder_project;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
@@ -12,11 +15,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Date;
+import java.util.Locale;
 
 public class FoodDiary extends AppCompatActivity {
     private FoodCounter foodCounter;
+    String currentDate;
 
-    // Creating a counter and checking if same day as
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,24 +30,25 @@ public class FoodDiary extends AppCompatActivity {
         Update();
     }
 
-    //Checks if current date is same and creates foodCounters based off
+    // Checks if the day has changed since last time and creates foodCounters based off that.
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void checkDateMatch(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        Date d = new Date();
-        String currentDate = DateFormat.format("dd-MM-yyyy ", d.getTime()).toString();
-        String lastTimeSavedDate = preferences.getString("foodDate", "");
-        if(!(preferences.contains("allTimeCalories"))){
-            foodCounter = new FoodCounter(0, 0);
-        } else if(lastTimeSavedDate.equals(currentDate)){
+        currentDate = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault()).format(new Date());
+        boolean todayChecking = preferences.getBoolean(currentDate, false);
+        if (!todayChecking) {
+            // New day
+            foodCounter = new FoodCounter(0, preferences.getInt("allTimeCalories", 0));
+        } else {
+            // Same day
             foodCounter = new FoodCounter(preferences.getInt("todayCalories", 0), preferences.getInt("allTimeCalories", 0));
-        } else{
-            foodCounter = new FoodCounter(0, preferences.getInt("allTime", 0));
         }
     }
 
-    // Takes user input and adds it to counter.
+    // Takes the input editTextNumber component, adds it to counter and updates Ui.
     public void addCalories(View v){
         EditText editTextNumber2 = findViewById(R.id.editTextNumber2);
+        // If statement for checking that input is not empty
         if(!(editTextNumber2.getText().toString().equals(""))){
             int cals = Integer.parseInt(editTextNumber2.getText().toString());
             foodCounter.plus(cals);
@@ -50,7 +56,7 @@ public class FoodDiary extends AppCompatActivity {
         }
     }
 
-    // Updates the activity UI
+    // Updates the activity UI elements
     public void Update(){
         TextView calorieAllView = findViewById(R.id.calAllTextView);
         TextView calorieTodayView = findViewById(R.id.calTodayTextView);
@@ -71,13 +77,12 @@ public class FoodDiary extends AppCompatActivity {
         }
     }
 
-    // Saving values and date to default preferences.
+    // Saving values and date to shared preferences.
     protected void onPause() {
         super.onPause();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
-        Date d = new Date();
-        editor.putString("foodDate", DateFormat.format("dd-MM-yyyy ", d.getTime()).toString());
+        editor.putBoolean(currentDate, true);
         editor.putInt("todayCalories", foodCounter.getTodayValue());
         editor.putInt("allTimeCalories", foodCounter.getAllTimeValue());
         editor.apply();
