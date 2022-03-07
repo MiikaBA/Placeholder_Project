@@ -18,18 +18,9 @@ public class SportsActivity {
         return timeSpent;
     }
 
-    public String getActType() {
-        if(actType == 1){
-            return "Running";
-        }else if(actType == 2){
-            return "Weight training";
-        }else if(actType == 3){
-            return "Cycling";
-        }else{
-            return "Other activity";
-        }
+    public int getActType() {
+        return actType;
     }
-
     public int getCalsBurnt() {
         return calsBurnt;
     }

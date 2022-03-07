@@ -45,8 +45,7 @@ public class ActivityAddition extends AppCompatActivity {
             editor.apply();
 
             Intent next = new Intent(ActivityAddition.this, SportsDiary.class);
-            next.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            startActivityIfNeeded(next, 0);
+            startActivity(next);
 
         }
     }

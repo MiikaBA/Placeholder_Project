@@ -1,10 +1,15 @@
 package com.example.placeholder_project.SportsDiary.Classes;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
+
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ActivitySingleton {
-    private ArrayList<SportsActivity> activities;
+    private List<SportsActivity> activities;
     private static final ActivitySingleton ourInstance = new ActivitySingleton();
 
     public static ActivitySingleton getInstance() {
@@ -13,7 +18,6 @@ public class ActivitySingleton {
 
     private ActivitySingleton() {
         activities = new ArrayList<>();
-        activities.add(new SportsActivity(1, 34, 456, "ripsakka lenkki XDDDDD"));
 
     }
 
@@ -23,6 +27,16 @@ public class ActivitySingleton {
 
     public SportsActivity getActivity(int pos){
         return activities.get(pos);
+    }
+
+    public void reInitiateArray(List<SportsActivity> l){
+        activities = new ArrayList<>();
+        for(int i = 0; i < l.size(); i++){
+            activities.add(new SportsActivity(l.get(i).getActType(),
+                    l.get(i).getTimeSpent(),
+                    l.get(i).getCalsBurnt(),
+                    l.get(i).getDescription()));
+        }
     }
 
     public void addActivity(String type, int time, int cals, String desc){
@@ -37,4 +51,6 @@ public class ActivitySingleton {
 
         activities.add(new SportsActivity(finalType, time, cals, desc));
     }
+
+
 }
