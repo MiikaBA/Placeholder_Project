@@ -24,13 +24,20 @@ public class ActivityDetails extends AppCompatActivity {
         SportsActivity actToShow = ActivitySingleton.getInstance().getActivity(i);
 
         TextView toSet = findViewById(R.id.actTypeLV);
-        toSet.setText(actToShow.getActType());
-
+        if(actToShow.getActType()==1) {
+            toSet.setText("Running");
+        }else if(actToShow.getActType()==2) {
+            toSet.setText("Weights");
+        }else if(actToShow.getActType()==3) {
+            toSet.setText("Cycling");
+        }else{
+            toSet.setText("Other Activity");
+        }
         toSet = findViewById(R.id.timeLV);
-        toSet.setText(Integer.toString(actToShow.getTimeSpent()) + " min.");
+        toSet.setText("Duration: " + Integer.toString(actToShow.getTimeSpent()) + " min.");
 
         toSet = findViewById(R.id.calLV);
-        toSet.setText(Integer.toString(actToShow.getCalsBurnt()) + " kcal.");
+        toSet.setText("Burned: " + Integer.toString(actToShow.getCalsBurnt()) + " kcal.");
 
         toSet = findViewById(R.id.descLV);
         toSet.setText(actToShow.getDescription());

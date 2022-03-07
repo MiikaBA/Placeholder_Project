@@ -13,7 +13,7 @@ import com.example.placeholder_project.SportsDiary.Activities.ActivityAddition;
 import com.example.placeholder_project.SportsDiary.Activities.SportsDiary;
 import java.util.Locale;
 
-public class BreathingExcercise extends AppCompatActivity {
+public class  BreathingExcercise extends AppCompatActivity {
 
     private static final long START_TIME_IN_MILLIS = 180000;
 
