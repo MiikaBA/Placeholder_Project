@@ -39,6 +39,10 @@ public class ActivitySingleton {
         }
     }
 
+    public void resetActivities(){
+        activities = new ArrayList<>();
+    }
+
     public void addActivity(String type, int time, int cals, String desc){
         int finalType;
         if(type.equals("running") || type.equals("Running")){
