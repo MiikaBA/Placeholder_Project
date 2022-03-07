@@ -31,10 +31,12 @@ public class SportsDiary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports_diary);
 
-        SharedPreferences counterVals = getSharedPreferences("CounterVals" , Activity.MODE_PRIVATE);
-        int TS = counterVals.getInt("TimeVal", 0);
-        int CB = counterVals.getInt("CalorieVal", 0);
-        SC = new SportsCounter(TS, CB);
+        updateUI();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         updateUI();
     }
 
@@ -49,6 +51,7 @@ public class SportsDiary extends AppCompatActivity {
             Button reset = findViewById(R.id.diaryResetButton);
             reset.setVisibility(View.INVISIBLE);
         }
+        SC = new SportsCounter(TS, CB);
 
         TextView calTV = findViewById(R.id.calTextView);
         calTV.setText(Integer.toString(SC.getCaloriesBurnt()) + " kcal.");
@@ -82,10 +85,12 @@ public class SportsDiary extends AppCompatActivity {
     public void goNext(View v){ //haha lol xd
         if(v == findViewById(R.id.foodButton)){
             Intent food = new Intent(SportsDiary.this, FoodDiary.class);
-            startActivity(food);
+            food.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivityIfNeeded(food, 0);
         }else if(v == findViewById(R.id.breathingButton)){
             Intent breath = new Intent(SportsDiary.this, BreathingExcercise.class);
-            startActivity(breath);
+            breath.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivityIfNeeded(breath, 0);
         }else if(v == findViewById(R.id.inspectionButton)){
             Intent inspection = new Intent(SportsDiary.this, ActivityInspection.class);
             startActivity(inspection);
