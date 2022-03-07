@@ -20,9 +20,8 @@ public class ActivityDetails extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         int i = b.getInt(ActivityInspection.EXTRA, 0);
 
-        Log.i("DBG", Integer.toString(i));
+        //Retrieves and displays values from user selected SportsActivity.
         SportsActivity actToShow = ActivitySingleton.getInstance().getActivity(i);
-
         TextView toSet = findViewById(R.id.actTypeLV);
         if(actToShow.getActType()==1) {
             toSet.setText("Running");

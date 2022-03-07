@@ -20,6 +20,8 @@ public class ActivityAddition extends AppCompatActivity {
         setContentView(R.layout.activity_addition);
     }
 
+    //Retrieves users input from EditText views.
+    //Adds time and calories to SportsCounter and creates SportsActivity.
     public void createActivity(View v){
         if(v == findViewById(R.id.creationButton)){
             EditText textToSave = findViewById(R.id.typeET);

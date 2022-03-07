@@ -35,7 +35,7 @@ public class ActivityInspection extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume() { //Makes sure ListView is up to date
         super.onResume();
         retrieveActivities();
         generateListView();
@@ -61,7 +61,7 @@ public class ActivityInspection extends AppCompatActivity {
 
     }
 
-    public void retrieveActivities(){
+    public void retrieveActivities(){   //Retrieves activities list from SharedPreferences and sends it to ActivitySingleton.
         SharedPreferences sharedPreferences = getSharedPreferences("ActivityList", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("Actlist", null);
@@ -77,7 +77,7 @@ public class ActivityInspection extends AppCompatActivity {
 
     }
 
-    public void saveActivities(){
+    public void saveActivities(){   //Saves activities list to SharedPreferences.
         List<SportsActivity> activities = ActivitySingleton.getInstance().getActivities();
         SharedPreferences Prefs = getSharedPreferences("ActivityList", MODE_PRIVATE);
         SharedPreferences.Editor editor = Prefs.edit();
@@ -88,7 +88,7 @@ public class ActivityInspection extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause() {
+    protected void onPause() {  //Calls saveActivities whenever
         super.onPause();
         Log.i("DBG", "Inspect onPause");
         saveActivities();
