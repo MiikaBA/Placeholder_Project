@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.placeholder_project.SportsDiary.Activities.ActivityAddition;
 import com.example.placeholder_project.SportsDiary.Activities.SportsDiary;
 import java.util.Locale;
 
@@ -103,12 +102,12 @@ public class  BreathingExcercise extends AppCompatActivity {
     }
 
     public void goNext(View v){
-        if(v == findViewById(R.id.foodsButton)){
+        if(v == findViewById(R.id.foodButton)){
             Intent food = new Intent(BreathingExcercise.this, FoodDiary.class);
             food.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivityIfNeeded(food, 0);
 
-        }else if(v == findViewById(R.id.sportButton)) {
+        }else if(v == findViewById(R.id.sportsButton)) {
             Intent sport = new Intent(BreathingExcercise.this, SportsDiary.class);
             sport.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivityIfNeeded(sport, 0);

@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //If there's not saved name, skip this activity and go to SportsDiary
         SharedPreferences sharedPref = getSharedPreferences("Prefs", MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -24,10 +25,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onResume() {
+        SharedPreferences sharedPref = getSharedPreferences("Prefs", MODE_PRIVATE);
+        //Closes the app when you return to this activity, except on the first time
         super.onResume();
-        onBackPressed();
+        if(!sharedPref.getString("name", "").matches("")) {
+            onBackPressed();
+        }
     }
     public void Submit(View view) {
+        //Checks the input fields and saves them into shared preferences, if none of them are empty
         SharedPreferences sharedPref = getSharedPreferences("Prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
@@ -50,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
             Intent intent = new Intent(this, SportsDiary.class);
             startActivity(intent);
-        } else {
-            return;
         }
     }
 }
