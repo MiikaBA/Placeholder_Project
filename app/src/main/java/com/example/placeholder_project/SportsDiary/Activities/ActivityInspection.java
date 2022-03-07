@@ -88,7 +88,7 @@ public class ActivityInspection extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause() {  //Calls saveActivities whenever
+    protected void onPause() {  //Calls saveActivities whenever user leaves the activity.
         super.onPause();
         Log.i("DBG", "Inspect onPause");
         saveActivities();
