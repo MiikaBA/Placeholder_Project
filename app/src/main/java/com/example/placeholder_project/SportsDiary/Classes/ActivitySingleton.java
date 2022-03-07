@@ -27,11 +27,11 @@ public class ActivitySingleton {
 
     public void addActivity(String type, int time, int cals, String desc){
         int finalType;
-        if(type.equals("juoksu") || type.equals("Juoksu")){
+        if(type.equals("running") || type.equals("Running")){
             finalType = 1;
-        }else if(type.equals("lihaskunto") || type.equals("Lihaskunto")){
+        }else if(type.equals("weights") || type.equals("Weights")){
             finalType = 2;
-        }else if(type.equals("pyöräily") || type.equals("Pyöräily")){
+        }else if(type.equals("Cycling") || type.equals("cycling")){
             finalType = 3;
         }else{finalType = 4;}
 

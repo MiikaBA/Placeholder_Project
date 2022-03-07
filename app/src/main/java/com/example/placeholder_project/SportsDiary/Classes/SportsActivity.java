@@ -20,13 +20,13 @@ public class SportsActivity {
 
     public String getActType() {
         if(actType == 1){
-            return "Juoksu";
+            return "Running";
         }else if(actType == 2){
-            return "Lihaskunto";
+            return "Weight training";
         }else if(actType == 3){
-            return "Pyöräily";
+            return "Cycling";
         }else{
-            return "Tuntematon suoritus";
+            return "Other activity";
         }
     }
 
@@ -41,13 +41,13 @@ public class SportsActivity {
     @Override
     public String toString(){
         if(actType == 1){
-            return "Juoksu";
+            return "Running";
         }else if(actType == 2){
-            return "Lihaskunto";
+            return "Weight training";
         }else if(actType == 3){
-            return "Pyöräily";
+            return "Cycling";
         }else{
-            return "Tuntematon aktiviteetti";
+            return "Other activity";
         }
     }
 }
