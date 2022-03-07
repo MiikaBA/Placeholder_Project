@@ -29,6 +29,7 @@ public class ActivitySingleton {
         return activities.get(pos);
     }
 
+    //Called by retrieveActivities. Receives List and adds contents to this.activities.
     public void reInitiateArray(List<SportsActivity> l){
         activities = new ArrayList<>();
         for(int i = 0; i < l.size(); i++){
@@ -39,10 +40,12 @@ public class ActivitySingleton {
         }
     }
 
+    //Empties activities list.
     public void resetActivities(){
         activities = new ArrayList<>();
     }
 
+    //Adds singular SportsActivity to list.
     public void addActivity(String type, int time, int cals, String desc){
         int finalType;
         if(type.equals("running") || type.equals("Running")){

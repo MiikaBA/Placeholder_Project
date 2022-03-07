@@ -14,17 +14,16 @@ public class SportsActivity {
         description = desc;
     }
 
+    //Getters.
     public int getTimeSpent(){
         return timeSpent;
     }
-
     public int getActType() {
         return actType;
     }
     public int getCalsBurnt() {
         return calsBurnt;
     }
-
     public String getDescription() {
         return description;
     }

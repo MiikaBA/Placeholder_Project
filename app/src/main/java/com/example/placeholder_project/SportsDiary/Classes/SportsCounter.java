@@ -9,19 +9,18 @@ public class SportsCounter {
         this.caloriesBurnt = caloriesBurnt;
     }
 
+    //Methods to increment time and calories.
     public void addTime(int timeToAdd){
         timeSpent = timeSpent + timeToAdd;
     }
-
     public void addCalories(int caloriesToAdd){
         caloriesBurnt = caloriesBurnt + caloriesToAdd;
     }
 
-    //returns value.
+    //Getters.
     public int getTimeSpent(){
         return timeSpent;
     }
-
     public int getCaloriesBurnt(){
         return caloriesBurnt;
     }
