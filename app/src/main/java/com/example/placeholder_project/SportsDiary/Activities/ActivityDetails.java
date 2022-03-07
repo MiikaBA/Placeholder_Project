@@ -34,10 +34,10 @@ public class ActivityDetails extends AppCompatActivity {
             toSet.setText("Other Activity");
         }
         toSet = findViewById(R.id.timeLV);
-        toSet.setText(Integer.toString(actToShow.getTimeSpent()) + " min.");
+        toSet.setText("Duration: " + Integer.toString(actToShow.getTimeSpent()) + " min.");
 
         toSet = findViewById(R.id.calLV);
-        toSet.setText(Integer.toString(actToShow.getCalsBurnt()) + " kcal.");
+        toSet.setText("Burned: " + Integer.toString(actToShow.getCalsBurnt()) + " kcal.");
 
         toSet = findViewById(R.id.descLV);
         toSet.setText(actToShow.getDescription());

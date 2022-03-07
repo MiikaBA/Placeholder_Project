@@ -34,13 +34,6 @@ public class SportsDiary extends AppCompatActivity {
         SharedPreferences counterVals = getSharedPreferences("CounterVals" , Activity.MODE_PRIVATE);
         int TS = counterVals.getInt("TimeVal", 0);
         int CB = counterVals.getInt("CalorieVal", 0);
-        if(TS > 0 || CB > 0){
-            Button reset = findViewById(R.id.diaryResetButton);
-            reset.setVisibility(View.VISIBLE);
-        }else{
-            Button reset = findViewById(R.id.diaryResetButton);
-            reset.setVisibility(View.INVISIBLE);
-        }
         SC = new SportsCounter(TS, CB);
         updateUI();
     }
