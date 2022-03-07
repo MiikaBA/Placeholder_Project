@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.placeholder_project.SportsDiary.Activities.ActivityAddition;
 import com.example.placeholder_project.SportsDiary.Activities.SportsDiary;
 import java.util.Locale;
 
@@ -24,7 +25,6 @@ public class BreathingExcercise extends AppCompatActivity {
      private boolean timerRunning;
 
      private long timeLeftinMillis = START_TIME_IN_MILLIS;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +93,7 @@ public class BreathingExcercise extends AppCompatActivity {
         button_reset.setVisibility(View.VISIBLE);
     }
 
+    //Muuttaa millis. minuuteiksi ja sekunneiksi
     private void updateCountDownText() {
         int minutes = (int) (timeLeftinMillis / 1000) / 60;
         int seconds = (int) (timeLeftinMillis / 1000) % 60;
@@ -104,10 +105,13 @@ public class BreathingExcercise extends AppCompatActivity {
     public void goNext(View v){
         if(v == findViewById(R.id.foodsButton)){
             Intent food = new Intent(BreathingExcercise.this, FoodDiary.class);
-            startActivity(food);
-        }else if(v == findViewById(R.id.sportButton)){
+            food.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivityIfNeeded(food, 0);
+
+        }else if(v == findViewById(R.id.sportButton)) {
             Intent sport = new Intent(BreathingExcercise.this, SportsDiary.class);
-            startActivity(sport);
+            sport.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivityIfNeeded(sport, 0);
         }
     }
 }
