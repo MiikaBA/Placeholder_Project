@@ -91,4 +91,11 @@ public class FoodDiary extends AppCompatActivity {
         editor.putInt("allTimeCalories", foodCounter.getAllTimeValue());
         editor.apply();
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    protected void onResume(){
+        super.onResume();
+        checkDateMatch();
+        Update();
+    }
 }
