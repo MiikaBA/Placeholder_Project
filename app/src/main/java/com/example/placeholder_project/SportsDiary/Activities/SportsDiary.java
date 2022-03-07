@@ -35,12 +35,12 @@ public class SportsDiary extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume() { //Makes sure UI is up to date when activity is showed.
         super.onResume();
         updateUI();
     }
 
-    public void updateUI() {
+    public void updateUI() {    //Updates Views and initiates SportsCounter object.
         SharedPreferences counterVals = getSharedPreferences("CounterVals" , Activity.MODE_PRIVATE);
         int TS = counterVals.getInt("TimeVal", 0);
         int CB = counterVals.getInt("CalorieVal", 0);
@@ -60,14 +60,12 @@ public class SportsDiary extends AppCompatActivity {
         timeTV.setText(Integer.toString(SC.getTimeSpent()) + " min.");
     }
 
-    public void resetDiary(View v){
+    public void resetDiary(View v){ //When called resets SportsCounter and deletes created activities.
         SC = new SportsCounter(0, 0);
         SharedPreferences counterVals = getSharedPreferences("CounterVals" , Activity.MODE_PRIVATE);
-        int TS = 0;
-        int CB = 0;
         SharedPreferences.Editor valEditor = counterVals.edit();
-        valEditor.putInt("TimeVal", TS);
-        valEditor.putInt("CalorieVal", CB);
+        valEditor.putInt("TimeVal", 0);
+        valEditor.putInt("CalorieVal", 0);
         valEditor.apply();
 
         ActivitySingleton.getInstance().resetActivities();
@@ -82,7 +80,7 @@ public class SportsDiary extends AppCompatActivity {
         updateUI();
     }
 
-    public void goNext(View v){ //haha lol xd
+    public void goNext(View v){ //Implements buttons used for navigation to other activities.
         if(v == findViewById(R.id.foodButton)){
             Intent food = new Intent(SportsDiary.this, FoodDiary.class);
             food.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
