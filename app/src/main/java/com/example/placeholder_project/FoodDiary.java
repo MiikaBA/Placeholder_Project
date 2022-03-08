@@ -26,6 +26,7 @@ public class FoodDiary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_diary);
+        getSupportActionBar().hide();
         checkDateMatch();
         Update();
     }
