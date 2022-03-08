@@ -16,6 +16,7 @@ public class ActivityDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        getSupportActionBar().hide();
 
         Bundle b = getIntent().getExtras();
         int i = b.getInt(ActivityInspection.EXTRA, 0);

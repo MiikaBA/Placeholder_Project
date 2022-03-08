@@ -30,6 +30,7 @@ public class ActivityInspection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inspection);
+        getSupportActionBar().hide();
 
         Log.i("DBG", "onCreate");
     }

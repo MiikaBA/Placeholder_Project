@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("Prefs", MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         if(!sharedPref.getString("name", "").matches("")) {
             Intent intent = new Intent(this, SportsDiary.class);
             startActivity(intent);

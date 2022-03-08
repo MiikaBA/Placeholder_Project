@@ -18,6 +18,7 @@ public class ActivityAddition extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addition);
+        getSupportActionBar().hide();
     }
 
     //Retrieves users input from EditText views.

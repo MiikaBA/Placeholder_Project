@@ -29,6 +29,7 @@ public class  BreathingExcercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathing_excercise);
+        getSupportActionBar().hide();
 
         textViewCountdown = findViewById(R.id.textView8);
 
