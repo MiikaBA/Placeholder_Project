@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.placeholder_project.SportsDiary.Activities.SportsDiary;
 import java.util.Date;
@@ -54,6 +55,8 @@ public class FoodDiary extends AppCompatActivity {
             int cals = Integer.parseInt(editTextNumber2.getText().toString());
             foodCounter.plus(cals);
             Update();
+        }else{
+            Toast.makeText(this, "Please give a proper number.", Toast.LENGTH_SHORT).show();
         }
     }
 
