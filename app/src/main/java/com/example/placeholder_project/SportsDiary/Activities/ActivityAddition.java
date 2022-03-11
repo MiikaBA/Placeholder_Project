@@ -22,7 +22,7 @@ public class ActivityAddition extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    //Retrieves users input from EditText views.
+    //Checks if user has left fields empty and then retrieves users input from EditText views.
     //Adds time and calories to SportsCounter and creates SportsActivity.
     public void createActivity(View v){
         if(v == findViewById(R.id.creationButton)){
