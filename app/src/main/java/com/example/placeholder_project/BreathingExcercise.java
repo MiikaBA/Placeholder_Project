@@ -22,7 +22,6 @@ public class  BreathingExcercise extends AppCompatActivity {
      private TextView textViewCountdown;
      private CountDownTimer countDownTimer;
      private boolean timerRunning;
-
      private long timeLeft = START_TIME;
 
     @Override
@@ -32,7 +31,6 @@ public class  BreathingExcercise extends AppCompatActivity {
         getSupportActionBar().hide();
 
         textViewCountdown = findViewById(R.id.textView8);
-
         buttonstart_pause = findViewById(R.id.button_startpause);
         button_reset = findViewById(R.id.button_reset);
 
@@ -54,7 +52,6 @@ public class  BreathingExcercise extends AppCompatActivity {
                 resetTimer();
             }
         });
-
         updateCountDownText();
     }
 
@@ -72,11 +69,9 @@ public class  BreathingExcercise extends AppCompatActivity {
             public void onFinish() {
                 timerRunning = false;
                 buttonstart_pause.setText("Start");
-                buttonstart_pause.setVisibility(View.INVISIBLE);
-                button_reset.setVisibility(View.VISIBLE);
-
+                buttonstart_pause.setVisibility(View.VISIBLE);
+                button_reset.setVisibility(View.INVISIBLE);
                 textViewCountdown.setText("Great job!");
-
             }
         }.start();
         //When timer is running, Reset button is hidden. Start button = Pause.
